@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { RouterModule } from '@angular/router';
-import { AppCameraComponent } from './app-camera.component';
+import { GetApiComponent } from './get-api.component';
+
 
 @NgModule({
   imports: [
@@ -13,10 +14,10 @@ import { AppCameraComponent } from './app-camera.component';
     RouterModule.forChild([
       {
         path: '',
-        component: AppCameraComponent
+        component: GetApiComponent
       }
     ])
   ],
-  declarations: [AppCameraComponent]
+  declarations: [GetApiComponent]
 })
-export class CamaraModule { }
+export class GetApiModule { }

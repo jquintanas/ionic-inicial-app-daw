@@ -18,6 +18,14 @@ const routes: Routes = [
   {
     path: 'camera',
     loadChildren: () => import('./app-camera/camara.module').then(m => m.CamaraModule)
+  },
+  {
+    path: 'apiGet',
+    loadChildren: () => import('./get-api/get-api.module').then(m => m.GetApiModule)
+  },
+  {
+    path: 'apiPost',
+    loadChildren: () => import('./post-data/post-data.module').then(m => m.PostDataModule)
   }
 ];
 

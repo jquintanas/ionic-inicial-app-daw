@@ -25,6 +25,16 @@ export class AppComponent {
       title: 'Cámara',
       url: '/camera',
       icon: 'camera'
+    },
+    {
+      title: 'Get Api',
+      url: '/apiGet',
+      icon: 'list'
+    },
+    {
+      title: 'Post Api',
+      url: '/apiPost',
+      icon: 'person-add'
     }
   ];
 

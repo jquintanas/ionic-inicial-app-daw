@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Post Api
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <form *ngIf="!bandera">
+    <ion-list lines="full" class="ion-no-margin ion-no-padding">
+      <ion-item>
+        <ion-label position="stacked">Nombres... <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input name="nombres" [(ngModel)]="estudiante.nombre" #nombres="ngModel" required type="text"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Matrícula... <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input name="matricula" [(ngModel)]="estudiante.matricula" #matricula="ngModel" required type="number">
+        </ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label position="stacked">Semestre... <ion-text color="danger">*</ion-text>
+        </ion-label>
+        <ion-input name="semestre" [(ngModel)]="estudiante.semestre" #semestre="ngModel" required type="number">
+        </ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    <div class="ion-padding">
+      <ion-button expand="block" type="submit" class="ion-no-margin" (click)="postData()"
+        [disabled]="(nombres.invalid ||   matricula.invalid || semestre.invalid)">Guardar Estudiante</ion-button>
+    </div>
+  </form>
+  <br>
+  <ion-card *ngIf="bandera">
+    <ion-card-header>
+      <ion-card-subtitle>Nombre: {{respuesta.nombre}}</ion-card-subtitle>
+      <ion-card-title>Matrícula: {{respuesta.matricula}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        semestre: {{respuesta.semestre}}
+        <br>
+        createdAt: {{respuesta.createdAt}}
+        <br>
+        updatedAt: {{respuesta.updatedAt}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
